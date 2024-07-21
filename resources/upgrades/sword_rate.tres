@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cswbdmmoly38n"]
+
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="1_lu7qg"]
+
+[resource]
+script = ExtResource("1_lu7qg")
+id = "sword_rate"
+name = "Sword Quickness"
+description = "增加剑10%攻击频率"
