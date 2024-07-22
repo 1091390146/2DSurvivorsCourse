@@ -8,8 +8,8 @@ signal selected
 ##记录一个变量，防止用户连点，重复执行
 #var disabled = false
 #
-#func _ready():
-	#gui_input.connect(on_gui_input)
+func _ready():
+	gui_input.connect(on_gui_input)
 	#mouse_entered.connect(on_mouse_entered)
 	#
 #func play_in(delay: float = 0):
@@ -36,13 +36,10 @@ func set_ability_upgrade(upgrade: AbilityUpgrade):
 	#await $AnimationPlayer.animation_finished
 	#selected.emit()
 	#
-#func on_gui_input(event:InputEvent):
-	#if disabled:
-		#return
-		#
-	#if event.is_action_pressed("left_click"):
-		#select_card()
-		#
+func on_gui_input(event:InputEvent):
+	if event.is_action_pressed("left_click"):
+		selected.emit()
+		
 #func on_mouse_entered():
 	#if disabled:
 		#return
