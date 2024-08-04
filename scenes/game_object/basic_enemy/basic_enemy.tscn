@@ -24,6 +24,7 @@ script = ExtResource("1_snbgf")
 health_component = NodePath("../HealthComponent")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_i3fqo")]
+visible = false
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
