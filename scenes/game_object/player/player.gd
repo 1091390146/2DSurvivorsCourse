@@ -11,12 +11,14 @@ var number_colliding_bodies = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CollisionArea2D.body_entered.connect(on_body_entered)
-	$CollisionArea2D.body_exited.connect(on_body_exited)
+
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	#health_component.health_decreased.connect(on_health_decreased)
 	health_component.health_changed.connect(on_health_changed)
 	update_health_display()
+	$CollisionArea2D.body_entered.connect(on_body_entered)
+	$CollisionArea2D.body_exited.connect(on_body_exited)
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,6 +41,7 @@ func check_deal_damage():
 	print(health_component.current_health)
 
 func on_body_entered(other_body: Node2D):
+	print(other_body)
 	number_colliding_bodies +=1
 	check_deal_damage()
 	
